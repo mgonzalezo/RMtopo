@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>Upload File to Postgres</title>
+<style>
+body {background-color: #EEEEEE;}
+h1 {font-size: 32pt;}
+.div-primary {margin: auto; padding-left: 20px; padding-right: 20px;}
+.frm-fld-label {text-align: right;}
+.frm-fld-input {text-align: left;}
+.frm-fld-btn-save {text-align: left;}
+.frm-bnt-save-file {width: auto; color: #CC0000;}
+.div-input-file {width: 60px; background-color: #CCCCCA;}
+</style>
+</head>
+<body style='background-color: #D1D1D1;'>
+<div class='div-primary'>
+    <h1>Upload a File</h1>
+    <form action = '/Upload_File' method = 'POST' enctype = 'multipart/form-data'>
+    <div class = 'row'>
+        <div class = 'frm-fld-label'>Seleccione la imagen a cargar</div>
+        <div class = 'frm-fld-input'><input type = 'file' class = 'div-input-file' name = 'file_name' id = 'file_name'></div>
+    </div>
+    <div class = 'row'>
+        <div class = 'frm-fld-btn-save'><button type = 'submit' class = 'frm-bnt-save-file'>Upload Your File</button></div>
+    </div>
+    </form>
+</div>
+</body>
+</html>
