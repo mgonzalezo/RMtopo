@@ -35,8 +35,18 @@
   <!-- Modal Structure -->
   <div id="modal1" class="modal">
     <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
+      <h4>Subir Imagen</h4>
+      <div class='div-primary'>
+        <form action = '/Upload_File' method = 'POST' enctype = 'multipart/form-data'>
+        <div class = 'row'>
+            <div class = 'frm-fld-label'>Seleccione la imagen a cargar</div>
+            <div class = 'frm-fld-input'><input type = 'file' class = 'div-input-file' name = 'file_name' id = 'file_name'></div>
+        </div>
+        <div class = 'row'>
+            <div class = 'frm-fld-btn-save'><button type = 'submit' class = 'frm-bnt-save-file'>Upload Your File</button></div>
+        </div>
+        </form>
+    </div>
     </div>
     <div class="modal-footer">
       <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
@@ -49,16 +59,6 @@
   </ul>
   
 
-<div class='div-primary'>
-    <form action = '/Upload_File' method = 'POST' enctype = 'multipart/form-data'>
-    <div class = 'row'>
-        <div class = 'frm-fld-label'>Seleccione la imagen a cargar</div>
-        <div class = 'frm-fld-input'><input type = 'file' class = 'div-input-file' name = 'file_name' id = 'file_name'></div>
-    </div>
-    <div class = 'row'>
-        <div class = 'frm-fld-btn-save'><button type = 'submit' class = 'frm-bnt-save-file'>Upload Your File</button></div>
-    </div>
-    </form>
-</div>
+
 </body>
 </html>
