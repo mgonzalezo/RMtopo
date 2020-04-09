@@ -29,4 +29,5 @@ h1 {
 .container-upload {
   height: 80px; }
   .container-upload a {
+    margin: 10px;
     float: right; }
