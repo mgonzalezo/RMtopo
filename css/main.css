@@ -34,3 +34,14 @@ h1 {
 
 body.mgon nav {
   background-color: #bf0000; }
+
+.modal-title {
+  background-color: #bf0000;
+  padding: 10px; }
+  .modal-title h4 {
+    margin: 0;
+    font-size: 22px;
+    color: white; }
+
+.modal-footer {
+  border-top: 1px solid #b2b2b2; }
