@@ -1,18 +1,38 @@
 <html>
 <head>
 <title>Upload File to Postgres</title>
-<style>
-body {background-color: #EEEEEE;}
-h1 {font-size: 32pt;}
-.div-primary {margin: auto; padding-left: 20px; padding-right: 20px;}
-.frm-fld-label {text-align: right;}
-.frm-fld-input {text-align: left;}
-.frm-fld-btn-save {text-align: left;}
-.frm-bnt-save-file {width: auto; color: #CC0000;}
-.div-input-file {width: 60px; background-color: #CCCCCA;}
-</style>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/main.css">
+
+<script type="text/javascript" src="js/main.js"></script>
+
 </head>
-<body style='background-color: #D1D1D1;'>
+<body style='background-color: #D1D1D1;'> 
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Logo</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a data-target="slide-out" class="sidenav-trigger" style="display: block">
+            <i class="material-icons">menu</i>
+        </a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul id="slide-out" class="sidenav">  
+    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+    <li><a href="#!">Second Link</a></li>
+  </ul>
+  
+
 <div class='div-primary'>
     <h1>Upload a File</h1>
     <form action = '/Upload_File' method = 'POST' enctype = 'multipart/form-data'>
