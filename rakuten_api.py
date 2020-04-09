@@ -9,11 +9,11 @@ import psycopg2 # for database connection and SQL execution
 # ---------------------
 # Connect to PostgreSQL
 # ---------------------
-t_host = "URL to Postgre Database"
-t_port = "port number here" #5432 is typically default port
-t_dbname = "database"
-t_name_user = "database user name"
-t_password = "user password"
+t_host = "127.0.0.1"
+t_port = "5432" #5432 is typically default port
+t_dbname = "rmtopo"
+t_name_user = "rakuten"
+t_password = "rakuten123"
 data_conn = psycopg2.connect(host=t_host, port=t_port, dbname=t_dbname, user=t_name_user, password=t_password)
 data_cursor = data_conn.cursor()
 
