@@ -25,3 +25,8 @@ h1 {
 .div-input-file {
   width: 60px;
   background-color: #CCCCCA; }
+
+.container-upload {
+  height: 80px; }
+  .container-upload a {
+    float: right; }
