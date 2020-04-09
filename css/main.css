@@ -31,3 +31,6 @@ h1 {
   .container-upload a {
     margin: 10px;
     float: right; }
+
+body.mgon nav {
+  background-color: #bf0000; }
