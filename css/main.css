@@ -1,14 +1,5 @@
-.card-item {
-  border-radius: 5px;
-  border: solid 1px #e2e2f1;
-  background-color: #e8e8e8; }
-  .card-item img {
-    width: 100%; }
-  .card-item .card-content {
-    padding: 10px; }
-  .card-item .card-footer {
-    padding: 10px;
-    text-align: center; }
+.card-action {
+  text-align: center; }
 
 body {
   background-color: #f3f3f3; }
