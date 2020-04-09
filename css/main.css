@@ -45,3 +45,6 @@ body.mgon nav {
 
 .modal-footer {
   border-top: 1px solid #b2b2b2; }
+
+.btn, .btn-large, .btn-small {
+  background-color: #c23535; }
