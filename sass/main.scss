@@ -1,4 +1,6 @@
-body {background-color: #EEEEEE;}
+@import 'card.scss';
+
+body {background-color: #f3f3f3;}
 h1 {font-size: 32pt;}
 .div-primary {margin: auto; padding-left: 20px; padding-right: 20px;}
 .frm-fld-label {text-align: right;}
@@ -37,4 +39,10 @@ body.mgon{
 
 .btn, .btn-large, .btn-small{
     background-color:#c23535;
+    color: white;
 }
+
+.btn:hover, .btn-large:hover, .btn-small:hover {
+    background-color: #bf0000;
+}
+

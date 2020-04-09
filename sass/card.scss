@@ -1,0 +1,15 @@
+.card-item{
+    border-radius: 5px;
+  border: solid 1px #e2e2f1;
+  background-color: #e8e8e8;
+    img{
+        width: 100%;
+    }
+    .card-content{
+        padding: 10px;
+    }
+    .card-footer{
+        padding: 10px;
+        text-align: center;
+    }
+}
