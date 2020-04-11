@@ -9,6 +9,6 @@ def index():
 def about():
     return "All about Flask"
 
-@app.route("/admin/dashboard")
-def admin_dashboard():
-    return render_template("admin/dashboard.html")
+#@app.route("/admin/dashboard")
+#def admin_dashboard():
+#    return render_template("admin/dashboard.html")
