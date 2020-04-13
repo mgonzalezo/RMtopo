@@ -11,7 +11,6 @@
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
 
 <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
-<!--<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>-->
 
 </head>
 <body class="mgon"> 
@@ -62,42 +61,30 @@
   </ul>
   
 
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal">
-    <div class="modal-title">
-        <h4>Subir Imagen</h4>
-    </div>
-    <form action = '/Upload_File' method = 'POST' enctype = 'multipart/form-data'></form>
-    <div class="modal-content">
-      
-      <div class='div-primary'>
-        
-            <!--<div class = 'row'>
-                <div class = 'frm-fld-label'>Seleccione la imagen a cargar</div>
-                <div class = 'frm-fld-input'><input type = 'file' class = 'div-input-file' name = 'file_name' id = 'file_name'></div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+  
+        <h1>Upload an image</h1>
+        <hr>
+  
+        <form action="/upload-image" method="POST" enctype="multipart/form-data">
+  
+          <div class="form-group">
+            <label>Select image</label>
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" name="image" id="image">
+              <label class="custom-file-label" for="image">Select image...</label>
             </div>
-            <div class = 'row'>
-                <div class = 'frm-fld-btn-save'><button type = 'submit' class = 'frm-bnt-save-file'>Upload Your File</button></div>
-            </div>-->
-            <div class="file-field input-field">
-                <div class="btn">
-                    <span>File</span>
-                    <input  type='file' class='div-input-file' name='file_name' id='file_name'>
-                </div>
-                <div class="file-path-wrapper">
-                    <input class="file-path validate" type="text">
-                </div>
-            </div>
-        
+          </div>
+  
+          <button type="submit" class="btn btn-primary">Upload</button>
+  
+        </form>
+  
+      </div>
     </div>
-    </div>
-    <div class="modal-footer">
-        <button type='submit' class='frm-bnt-save-file waves-effect waves-light btn'>Upload Your File</button>
-      <a href="#!" class="modal-close waves-effect waves-light btn">Close</a>
-    </div>
-</form>
   </div>
-
 
 
 </body>
