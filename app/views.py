@@ -8,9 +8,9 @@ import os
 def index():
          return render_template("public/index.html")
 
-# @app.route("/admin/dashboard")
-# def admin_dashboard():
-#    return render_template("admin/dashboard.html")
+@app.route("/admin/dashboard")
+def admin_dashboard():
+   return render_template("admin/dashboard.html")
 
 
 # @app.route("/upload-image", methods=["GET , POST"])
@@ -55,5 +55,5 @@ def upload():
 
     #return render_template("public/core.html")
 
-if __name__ == "__main__":
-    app.run(debug=True)
+# if __name__ == "__main__":
+#     app.run(debug=True)
