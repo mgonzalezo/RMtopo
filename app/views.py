@@ -8,10 +8,11 @@ import os
 def index():
          return render_template("public/index.html")
 
-# @app.route("/admin/dashboard")
-# def admin_dashboard():
-#    return render_template("admin/dashboard.html")
 
+
+@app.route("/about")
+def about():
+    return "All about Flask"
 
 # @app.route("/upload-image", methods=["GET , POST"])
 # def upload_image():
