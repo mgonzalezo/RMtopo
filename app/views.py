@@ -1,7 +1,5 @@
 from app import app
-from flask import render_template, request, redirect, send_from_directory, Flask,url_for, jsonify
-# from sqlalquemy import create_engine
-# from sqlalquemy.orm import scoped_session, sessionmaker
+from flask import render_template, request, redirect, send_from_directory, Flask,url_for, jsonify,make_response
 from werkzeug.utils import secure_filename
 import os
 
@@ -11,16 +9,7 @@ app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024
 
 @app.route("/")
 def index():
-    target = os.path.join(APP_ROOT, 'images/')
-    images = []
-    for filename in os.listdir(target):
-        path = os.path.join(target, filename)
-        if os.path.isfile(path):
-            images.append(target + filename)
-    # list_images = [{'name': 'Home', 'url': 'https://example.com/1'},
-    #                        {'name': 'About', 'url': 'https://example.com/2'},
-    #                        {'name': 'Pics', 'url': 'https://example.com/3'}]
-    return render_template("public/index.html", list_images=images)
+    return render_template("public/index.html")
 
 @app.route("/about")
 def about():
@@ -75,20 +64,21 @@ def upload():
 @app.route("/listimages", methods=['GET'])
 def getimages():
     target = os.path.join(APP_ROOT, 'images/')
+    images_path = []
+    images_name = []
+    if request.method != 'GET':
+        return make_response('Malformed request', 400)
+    for filename in os.listdir(target):
+        path = os.path.join(target, filename).replace("\\","/")
+        if os.path.isfile(path):
+            images_path.append(path + filename)
+            images_name.append(filename)
     print(target)
-    if request.method == "GET":
-        images = []
-        for filename in os.listdir(target):
-            path = os.path.join(target, filename)
-            if os.path.isfile(path):
-                images.append(filename)
-        return jsonify(images)
-
-    return render_template('public/index.html',
-                           nav=images,
-                           title="Jinja Demo Site",
-                           description="Smarter page templates \
-                                with Flask & Jinja.")
+    print(path)
+    zipbObj = zip(images_name, images_path)
+    dictOimages = dict(zipbObj)
+    headers = {"Image_Name": "Image_path"}
+    return make_response(jsonify(dictOimages), 200, headers)
 
 if __name__ == "__main__":
     app.run(debug=True)
