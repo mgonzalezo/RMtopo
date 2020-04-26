@@ -7,10 +7,16 @@ import os
 
 @app.route("/")
 def index():
-    list_images = [{'name': 'Home', 'url': 'https://example.com/1'},
-                           {'name': 'About', 'url': 'https://example.com/2'},
-                           {'name': 'Pics', 'url': 'https://example.com/3'}]
-    return render_template("public/index.html", list_images=list_images)
+    target = os.path.join(APP_ROOT, 'images/')
+    images = []
+    for filename in os.listdir(target):
+        path = os.path.join(target, filename)
+        if os.path.isfile(path):
+            images.append(target + filename)
+    # list_images = [{'name': 'Home', 'url': 'https://example.com/1'},
+    #                        {'name': 'About', 'url': 'https://example.com/2'},
+    #                        {'name': 'Pics', 'url': 'https://example.com/3'}]
+    return render_template("public/index.html", list_images=images)
 
 @app.route("/about")
 def about():
@@ -100,9 +106,7 @@ def getimages():
             if os.path.isfile(path):
                 images.append(filename)
         return jsonify(images)
-        # list_images = [{'name': 'Home', 'url': 'https://example.com/1'},
-        #                    {'name': 'About', 'url': 'https://example.com/2'},
-        #                    {'name': 'Pics', 'url': 'https://example.com/3'}]
+
     return render_template('public/index.html',
                            nav=images,
                            title="Jinja Demo Site",
