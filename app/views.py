@@ -73,8 +73,6 @@ def getimages():
         if os.path.isfile(path):
             images_path.append(path + filename)
             images_name.append(filename)
-    print(target)
-    print(path)
     zipbObj = zip(images_name, images_path)
     dictOimages = dict(zipbObj)
     headers = {"Image_Name": "Image_path"}
