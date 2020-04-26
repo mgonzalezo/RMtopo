@@ -1,9 +1,13 @@
 from app import app
 from flask import render_template, request, redirect, send_from_directory, Flask,url_for, jsonify
+# from sqlalquemy import create_engine
+# from sqlalquemy.orm import scoped_session, sessionmaker
 from werkzeug.utils import secure_filename
 import os
 
-#app.config["IMAGE_UPLOADS"] = "/Users/marco.gonzalezortiz/Documents/Rakuten_Mobile/Marco/Learning/rmtopo/app/static"
+APP_ROOT = os.path.dirname(os.path.abspath(__file__))
+app.config["ALLOWED_IMAGE_EXTENSIONS"] = ["JPEG", "JPG", "PNG", "GIF"]
+app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024
 
 @app.route("/")
 def index():
@@ -21,33 +25,6 @@ def index():
 @app.route("/about")
 def about():
     return "All about Flask"
-
-# @app.route("/upload-image", methods=["GET , POST"])
-# def upload_image():
-#     if request.method == "POST":
-#         if request.files:
-#             image = request.files["image"]
-#             image.save(os.path.join(app.config["IMAGE_UPLOADS"], image.filename))
-#             print("Image saved")
-#             return redirect(request.url)
-#     return render_template("public/core.html")
-
-# #@app.route('/upload-image/<filename>')
-# #def send_image(filename):
-# #    return send_from_directory('images',filename)
-
-# #if __name__ == "__main__":
-# #    app.run(debug=True)
-
-
-# import os
-# from flask import Flask, render_template, request
-
-# __author__ = 'ibininja'
-
-APP_ROOT = os.path.dirname(os.path.abspath(__file__))
-app.config["ALLOWED_IMAGE_EXTENSIONS"] = ["JPEG", "JPG", "PNG", "GIF"]
-app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024
 
 def allowed_image(filename):
     
