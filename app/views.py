@@ -86,5 +86,29 @@ def upload():
 
     return render_template("public/index.html")
     
+@app.route("/listImages", methods=['GET'])
+def getImages():
+    target = os.path.join(APP_ROOT, 'images/')
+    print(target)
+
+    if request.method == "GET":
+        if request.files:
+            image = request.files["image"]
+            if image.filename == "":
+                print("No filename")
+                #return redirect(request.url)
+                return redirect(url_for('index'))
+
+            if allowed_image(image.filename):
+                filename = secure_filename(image.filename)
+                image.save(os.path.join(target, filename))
+                print("Image saved")
+                return redirect(url_for('index'))
+            else:
+                print("That file extension is not allowed")
+                return redirect(url_for('index'))
+
+    return render_template("public/index.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
