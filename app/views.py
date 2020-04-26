@@ -1,5 +1,5 @@
 from app import app
-from flask import render_template, request, redirect, send_from_directory, Flask,url_for
+from flask import render_template, request, redirect, send_from_directory, Flask,url_for, jsonify
 from werkzeug.utils import secure_filename
 import os
 
@@ -90,16 +90,21 @@ def upload():
     return render_template("public/index.html")
     
 @app.route("/listimages", methods=['GET'])
-def getImages():
+def getimages():
     target = os.path.join(APP_ROOT, 'images/')
     print(target)
     if request.method == "GET":
-            list_images = [{'name': 'Home', 'url': 'https://example.com/1'},
-                           {'name': 'About', 'url': 'https://example.com/2'},
-                           {'name': 'Pics', 'url': 'https://example.com/3'}]
-                           
+        images = []
+        for filename in os.listdir(target):
+            path = os.path.join(target, filename)
+            if os.path.isfile(path):
+                images.append(filename)
+        return jsonify(images)
+        # list_images = [{'name': 'Home', 'url': 'https://example.com/1'},
+        #                    {'name': 'About', 'url': 'https://example.com/2'},
+        #                    {'name': 'Pics', 'url': 'https://example.com/3'}]
     return render_template('public/index.html',
-                           nav=list_images,
+                           nav=images,
                            title="Jinja Demo Site",
                            description="Smarter page templates \
                                 with Flask & Jinja.")

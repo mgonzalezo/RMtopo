@@ -22,10 +22,11 @@
     <div class="container">
         <div class="row">
           {% for image in list_images %}
-              {% extends 'commons/cardImage.html' %}
+              {% include 'commons/cardImage.html' %}
+              <!-- <a> {{ image.name }}</a> -->
           {% endfor %} 
-        </div>   
-    </div>
+        </div>
+      </div>   
   {% include  'commons/sidebar.html' %}
   <div class="container">
     <div class="row">
