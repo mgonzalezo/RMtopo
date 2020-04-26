@@ -14,18 +14,7 @@
 
 </head>
 <body class="mgon"> 
-  <nav>
-    <div class="nav-wrapper">
-        <a data-target="slide-out" class="sidenav-trigger" style="display: block">
-            <i class="material-icons">menu</i>
-        </a>
-      <a href="#" class="brand-logo">Logo</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="#"><i class="material-icons">close</i></a></li>
-        <li></li>
-      </ul>
-    </div>
-  </nav>
+  {% include  'commons/header.html' %}
   <div class="container-upload">
   <!-- Modal Trigger -->
   <a class="waves-effect waves-light btn modal-trigger" href="#modal1">
@@ -52,16 +41,7 @@
             </div>
           </div>   
     </div>
-  
-  <ul id="slide-out" class="sidenav">  
-    <li><a href="#!"><i class="material-icons">cloud</i>Core</a></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>RAN</a></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>IMS</a></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>Transport</a></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>RCS</a></li>
-  </ul>
-  
-
+  {% include  'commons/sidebar.html' %}
   <div class="container">
     <div class="row">
       <div class="col">
