@@ -7,7 +7,10 @@ import os
 
 @app.route("/")
 def index():
-         return render_template("public/index.html")
+    list_images = [{'name': 'Home', 'url': 'https://example.com/1'},
+                           {'name': 'About', 'url': 'https://example.com/2'},
+                           {'name': 'Pics', 'url': 'https://example.com/3'}]
+    return render_template("public/index.html", list_images=list_images)
 
 @app.route("/about")
 def about():

@@ -21,8 +21,10 @@
   </div>
     <div class="container">
         <div class="row">
-          {% include  'commons/cardImage.html' %}
-          </div>   
+          {% for image in list_images %}
+              {% include 'commons/cardImage.html' %}
+          {% endfor %} 
+        </div>   
     </div>
   {% include  'commons/sidebar.html' %}
   <div class="container">
