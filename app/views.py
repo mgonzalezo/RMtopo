@@ -68,12 +68,8 @@ def upload():
         os.mkdir(target)
 
     if request.method == "POST":
-    
         if request.files:
-
             image = request.files["image"]
-
-
             if image.filename == "":
                 print("No filename")
                 #return redirect(request.url)
