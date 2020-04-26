@@ -1,50 +1,26 @@
-<html>
-<head>
-<title>Rakuten Mobile Topologies</title>
-<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+{% extends 'commons/layout.html' %}
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
-<script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
-</head>
-<body class="mgon"> 
-  {% include  'commons/header.html' %}
-  <div class="container-upload">
-  <!-- Modal Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">
-    <i class="material-icons">file_upload</i>
-  </a>
-  </div>
-    <div class="container">
-        <div class="row">
-          {% for image in list_images %}
-              {% include 'commons/cardImage.html' %}
-              <!-- <a> {{ image.name }}</a> -->
-          {% endfor %} 
-        </div>
-      </div>   
-  {% include  'commons/sidebar.html' %}
-  <div class="container">
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<div class="row">
+  {% for img in list_images %}
+  <div class="col s3">
     <div class="row">
-      <div class="col">
-        <h1>Upload an image</h1>
-        <hr>
-        <form action="/upload" method="POST" enctype="multipart/form-data">
-          <div class="form-group">
-            <label>Select image</label>
-            <div class="custom-file">
-              <input type="file" class="custom-file-input" name="image" id="image">
-              <label class="custom-file-label" for="image">Select image...</label>
+          <div class="card">
+            <div class="card-image">
+              <img src={{img}}>
+              <span class="card-title">titulo.jpg</span>
+            </div>
+            <div class="card-content">
+                <a>{{img}}</a>
+            </div>
+            <div class="card-action">
+              <a href="#" class="waves-effect waves-light btn">Visualizar</a>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary">Upload</button>
-        </form>
       </div>
-    </div>
   </div>
-</body>
-</html>
+  {% endfor %} 
+</div>
+{% endblock %}
